@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+.singleTask{
+    border-top: 1px solid gray;
+    margin: 20px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+.catesec{
+    border: 1px solid black;
+    background-color: chartreuse;
+    
+}
+
+.todoheading{
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.form_class{
+    width: 100%;
+    text-align: center;
+}
+.desc_Class input{
+    height: 50px;
+    width: 100%;
+    margin: 15px;
+}
+.select_and_input{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.select_and_input select{
+    height: 45px;
+    width: 40%;
+}
+.select_and_input input{
+    height: 45px;
+    width: 40%;
+}
+.buttonDesign{
+    height: 50px;
+    width: 120px;
+    color: white;
+}
+.colorRed{
+    background-color: red;
+    
+}
+.colorGrey{
+    background-color: gray;
+}

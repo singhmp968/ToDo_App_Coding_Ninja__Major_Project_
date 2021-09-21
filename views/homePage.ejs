@@ -1,0 +1,58 @@
+<!-- <html>
+    <head>
+        <title>
+            <%= title%>
+        </title>
+        <link rel="stylesheet" href="/css/home.css">
+  
+    </head>
+
+    <body>
+        <h1>TODO APPLICATION</h1> -->
+        <link rel="stylesheet" href="/css/home.css">
+  
+        <div class="form_class">
+            <form action="/create_todo" method="POST">
+            <div class="desc_Class">
+                <input type="text" required name="desc" placeholder="what do you need to do"> 
+            </div>
+            <div class="select_and_input">
+                <select name="category" required>
+                    <option value="" disabled selected>Select your option</option>
+                    <option>Personal</option>
+                    <option>Work</option>
+                    <option>Claeaning</option>
+                    <option>Otheres</option>
+                </select>
+                <input type="date" name="dateValue" placeholder="Due data dd/mm/yyyy" required>
+            </div>
+                <button class="buttonDesign colorGrey" id="submitButton" type="submit"><i class="fa fa-plus-square" > </i> Add Task</button>
+                 <button class="buttonDesign colorRed" id="deleteButton" type="submit"><i class="fa fa-trash-o"></i> Delete Task</button>
+      
+            </form>
+                 
+        </div>
+
+
+        <div>
+            <% for(let i of todoList) { let j=0; let newIds='descids'+j; %>
+                <div class="singleTask">
+                    <input type="checkbox" name="delechack" class="delechack" onclick="checkedOrNot()" uid = <%= i._id %> >
+                    <div>
+                        <p id=<%= i._id %>  uid = <%= i._id %> class="dispdsc"><%= i.desc %></p>
+                        <p id=<%= i._id + i.dueDate %> class="dueDate"  ><%= i.dueDate %></p>
+                    </div>
+                    <div class="catesec">
+                        <%= i.category %>
+                    </div>
+                </div>
+                <% j++; } %>
+ 
+        </div>
+
+
+
+    <script src="/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- </body>
+</html> -->
