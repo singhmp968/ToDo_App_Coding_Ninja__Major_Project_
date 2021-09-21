@@ -1,3 +1,33 @@
+// (function(){
+//     let categorys = document.getElementsByClassName('catesec');
+//     for(let i=0;i<categorys.length;i++){
+//         console.log('dasdas',categorys[i])
+//     }
+// })
+let designcl = ['work','Personal','Claeaning','Otheres']
+$(document).ready(function(){
+
+    let categorys = document.getElementsByClassName('catesec');
+        for(let i=0;i<categorys.length;i++){
+            let Cateval=categorys[i].innerHTML.trim();
+            console.log(Cateval)
+            if(categorys[i].innerHTML.trim()=='Work'){
+               categorys[i].classList.add(designcl[0])
+               categorys[i].classList.add('commonClass')
+            }
+            else if(categorys[i].innerHTML.trim()=='Personal'){
+                categorys[i].classList.add(designcl[1])
+                categorys[i].classList.add('commonClass')
+            }else if(categorys[i].innerHTML.trim()=='Claeaning'){
+                categorys[i].classList.add(designcl[2])
+                categorys[i].classList.add('commonClass')
+            }else if(categorys[i].innerHTML.trim()=='Otheres'){
+                categorys[i].classList.add(designcl[3])
+                categorys[i].classList.add('commonClass')
+            }
+        }
+});
+
 // section from making cross line on checked
 function checkedOrNot(){
     let cb = document.querySelectorAll('.delechack');

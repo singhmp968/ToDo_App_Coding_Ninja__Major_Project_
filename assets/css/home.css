@@ -56,3 +56,26 @@ body{
 .colorGrey{
     background-color: gray;
 }
+.commonClass{
+    height: auto;
+    width: auto;
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;    
+    color: white;
+
+}
+.work{
+    background-color: purple;
+        
+}
+.Personal{
+    background-color: skyblue;
+
+}
+.Claeaning{
+    background-color: green;
+}
+.Otheres{
+    background-color: teal;
+}
