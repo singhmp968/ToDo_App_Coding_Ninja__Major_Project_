@@ -1,6 +1,7 @@
+//
 //const db = require('./config/mongoose')
 const TodoLists = require('../models/todo_list')
-
+const swal = require('sweetalert')
 dummytodo = [
     {
     uId:'1',
@@ -41,6 +42,7 @@ module.exports.home = function(req,res){
             console.log('error in fetching data');
             return
         }
+        
         return res.render('homePage',{
             title:"Home",
             todoList:todo
@@ -74,6 +76,8 @@ module.exports.createTodo = function(req,res){
             console.log('Oops error occoured');
             return;
         }
+        swal("Hello world!");
+
         console.log('data is being added',newArr)
         return res.redirect('/')
     })

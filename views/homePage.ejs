@@ -24,7 +24,7 @@
                     <option>Claeaning</option>
                     <option>Otheres</option>
                 </select>
-                <input type="date" name="dateValue" placeholder="Due data dd/mm/yyyy" required>
+                <input class="datesValues" type="date" name="dateValue" placeholder="Due data dd/mm/yyyy" required>
             </div>
                 <button class="buttonDesign colorGrey" id="submitButton" type="submit"><i class="fa fa-plus-square" > </i> Add Task</button>
                 <button class="buttonDesign colorRed" id="deleteButton" type="submit"><i class="fa fa-trash-o"></i> Delete Task</button>
@@ -38,13 +38,14 @@
             <% for(let i of todoList) { let j=0; let newIds='descids'+j; %>
                 <div class="singleTask">
                     <input type="checkbox" name="delechack" class="delechack" onclick="checkedOrNot()" uid = <%= i._id %> >
-                    <div>
+                    <div class="name_and_dueDate">
                         <p id=<%= i._id %>  uid = <%= i._id %> class="dispdsc"><%= i.desc %></p>
                         <p id=<%= i._id + i.dueDate %> class="dueDate"  ><%= i.dueDate %></p>
                     </div>
                     <div class="catesec">
                         <%= i.category %>
                     </div>
+                        <div><a href="/edit">Edit</a></div>
                 </div>
                 <% j++; } %>
  

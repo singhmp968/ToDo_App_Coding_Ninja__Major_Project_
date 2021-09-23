@@ -1,9 +1,3 @@
-// (function(){
-//     let categorys = document.getElementsByClassName('catesec');
-//     for(let i=0;i<categorys.length;i++){
-//         console.log('dasdas',categorys[i])
-//     }
-// })
 let designcl = ['work','Personal','Claeaning','Otheres']
 $(document).ready(function(){
 
