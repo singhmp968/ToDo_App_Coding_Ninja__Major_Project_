@@ -14,7 +14,7 @@
         <div class="form_class">
             <form action="/create_todo" method="POST">
             <div class="desc_Class">
-                <input type="text" required name="desc" placeholder="what do you need to do"> 
+                <input type="textarea" required name="desc" placeholder="what do you need to do"> 
             </div>
             <div class="select_and_input">
                 <select name="category" required>
@@ -45,7 +45,7 @@
                     <div class="catesec">
                         <%= i.category %>
                     </div>
-                        <div><a href="/edit">Edit</a></div>
+                        <div class="editClass"><a href="/editdata/?id=<%=i._id %>">Edit</a></div>
                 </div>
                 <% j++; } %>
  
@@ -54,6 +54,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/js/script.js"></script>
     
     <!-- </body>

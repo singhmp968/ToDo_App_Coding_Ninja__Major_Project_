@@ -1,0 +1,20 @@
+<h1>hi there</h1>
+<div class="form_class">
+<form action="/edit-todolist?id=<%= todolist._id %>" method="POST">
+    <div class="desc_Class">
+        <input type="textArea" name="desc" value=<%= todolist.desc %>>
+    </div>
+    <div class="select_and_input">
+        <select name="category">
+            <option value="" disabled selected><%= todolist.category %></option>
+            <option>Personal</option>
+            <option>Work</option>
+            <option>Claeaning</option>
+            <option>Otheres</option>
+    
+        </select>
+        <input type="date" name="dueDate" value=<%= todolist.dueDate %>>
+</div>
+    <button type="submit"> edit my changes </button>
+</form>
+</div>

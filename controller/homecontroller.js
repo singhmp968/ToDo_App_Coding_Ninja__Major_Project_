@@ -63,14 +63,49 @@ module.exports.home = function(req,res){
 // module.exports.getTodoValues = function(req,res){
 //     console
 // }
+
 module.exports.createTodo = function(req,res){
-    console.log(req.body)   
+let months = ['jan','feb','mar','Apr','May','june','july','aug','sept','oct','nov','dec']
+    console.log('sdasas',req.body)   
    // dummytodo.push(req.body)
-    
+    dueDate =req.body.dateValue.split('-');
+    console.log('--->',dueDate)   
+    newdate = '';
+    let monapp = '';
+    if(dueDate[1] == '01'){
+        monapp=months[0];
+    }
+    else if(dueDate[1] == '02'){
+        monapp=months[1];
+    }else if(dueDate[1] == '03'){
+        monapp=months[2];
+    }else if(dueDate[1] == '04'){
+        monapp=months[3];
+    }else if(dueDate[1] == '04'){
+        monapp=months[3];
+    }else if(dueDate[1] == '05'){
+        monapp=months[4];
+    }else if(dueDate[1] == '06'){
+        monapp=months[5];
+    }else if(dueDate[1] == '07'){
+        monapp=months[6];
+    }else if(dueDate[1] == '08'){
+        monapp=months[7];
+    }else if(dueDate[1] == '09'){
+        monapp=months[8];
+    }else if(dueDate[1] == '10'){
+        monapp=months[9];
+    }else if(dueDate[1] == '11'){
+        monapp=months[10];
+    }else if(dueDate[1] == '12'){
+        monapp=months[11];
+    }
+    newdate =dueDate[2]+' '+monapp+' '+dueDate[0]
+   
     TodoLists.create({
         desc:req.body.desc,
         category:req.body.category,
-        dueDate:req.body.dateValue
+        dueDate: newdate
     },function(err,newArr){
         if(err){
             console.log('Oops error occoured');
@@ -152,5 +187,31 @@ return res.redirect('/')
     // contactList.splice(contactIndex,1)
     // }
     
+}
+
+module.exports.EditPage = function(req,res){
+    console.log('aaa',req.query)
+    TodoLists.findById(req.query.id,function(err,todoLists){
+        if(err){ console.log('hi man!! it an error'); return}
+    
+        console.log('toli',todoLists)
+        return res.render('editPage',{
+        title:'Edit Page',
+        todolist:todoLists
+        })
+    })
+    
+    // return res.render('editPage',{
+    //     title:'Edit Page'
+    // })
+}
+
+module.exports.editDetails = function(req,res){
+    console.log('==>>',req.query.id)
+    console.log('asd',req.body)
+    TodoLists.updateOne({_id:req.query.id},{$set:{desc:req.body.desc,category:req.body.category,dueDate:req.body.dueDate}} ,function(err,todoData){
+        if(err){console.log('erroe while updating'); return}
+        return res.redirect('/')
+    })
 }
 

@@ -1,13 +1,17 @@
 body{
     margin: 0;
     font-family: sans-serif;
+    background-color: rgb(85, 2, 85);
 }
 .singleTask{
-    border-top: 1px solid gray;
-    margin: 20px;
+    border: 1px solid white;
+    width: 50%;
+    color: white;
     display: flex;
     align-items: baseline;
     justify-content: space-evenly;
+    position: relative;
+    left: 25%;
 }
 .catesec{
     border: 1px solid black;
@@ -16,15 +20,17 @@ body{
 }
 
 .todoheading{
-    color: blue;
+    color: white;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 50px;
 }
 
 .form_class{
-    width: 100%;
+    width: 50%;
     text-align: center;
+    position: relative;
+    left: 25%;
 }
 .desc_Class input{
     height: 50px;
@@ -93,6 +99,24 @@ body{
     box-shadow: 0px 0px 5px 2px rgb(14, 6, 6) ; 
     transform:scale(1.2);
 }
+.editClass{
+    transition: transform 0.3s;
+
+}
+.editClass:hover{
+    box-shadow: 0px 0px 5px 2px rgb(14, 6, 6) ; 
+    transform:scale(1.2);
+
+
+}
+.editClass a{
+text-decoration: none;
+color: white;
+border: 1px solid  white;
+padding: 4px;
+background-color: brown;
+}
+
 .work{
     background-color: purple;
         
