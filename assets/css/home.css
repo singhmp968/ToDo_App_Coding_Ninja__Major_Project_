@@ -6,12 +6,16 @@ body{
 .singleTask{
     border: 1px solid white;
     width: 50%;
+    height: 90px;
     color: white;
     display: flex;
     align-items: baseline;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     position: relative;
     left: 25%;
+}
+.delechack{
+    margin: 15px;
 }
 .catesec{
     border: 1px solid black;
@@ -100,8 +104,10 @@ body{
     transform:scale(1.2);
 }
 .editClass{
-    transition: transform 0.3s;
-
+        transition: transform 0.3s;
+        position: absolute;
+        left: 80%;
+        margin: 20px;
 }
 .editClass:hover{
     box-shadow: 0px 0px 5px 2px rgb(14, 6, 6) ; 

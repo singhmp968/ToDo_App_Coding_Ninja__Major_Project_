@@ -27,7 +27,7 @@ function checkedOrNot(){
     let cb = document.querySelectorAll('.delechack');
     let descdisp = document.querySelectorAll('.dispdsc');
     let ddsp = document.querySelectorAll('.dueDate');
-    
+    console.log('sdadsa',ddsp)
     
     for(let i=0;i<descdisp.length;i++){
         let dueDate = ddsp[i].innerHTML;

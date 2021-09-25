@@ -100,7 +100,7 @@ let months = ['jan','feb','mar','Apr','May','june','july','aug','sept','oct','no
     }else if(dueDate[1] == '12'){
         monapp=months[11];
     }
-    newdate =dueDate[2]+' '+monapp+' '+dueDate[0]
+    newdate =dueDate[2]+'-'+monapp+'-'+dueDate[0]
    
     TodoLists.create({
         desc:req.body.desc,

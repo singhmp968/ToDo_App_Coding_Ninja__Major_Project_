@@ -1,8 +1,7 @@
-<h1>hi there</h1>
 <div class="form_class">
 <form action="/edit-todolist?id=<%= todolist._id %>" method="POST">
     <div class="desc_Class">
-        <input type="textArea" name="desc" value=<%= todolist.desc %>>
+        <input type="text" name="desc"  value='<%= todolist.desc %>' >
     </div>
     <div class="select_and_input">
         <select name="category">
