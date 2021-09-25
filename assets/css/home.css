@@ -40,7 +40,10 @@ body{
     height: 50px;
     width: 100%;
     margin: 15px;
+    text-align: center;
     transition: transform 0.3s;
+    border-radius: 22px;
+    outline: none;
 }
 .desc_Class input:hover{
     /* transform: scale(1.1); */
@@ -56,12 +59,22 @@ body{
     height: 45px;
     width: 40%;
     transition: transform 0.3s;
+    text-align: center;
+    
+    margin-right: 50px;
 }
 .select_and_input input{
     height: 45px;
     width: 40%;
+    text-align: center;
+    transition: transform 0.3s;
+   
 }
 .select_and_input select:hover{
+    box-shadow: 0px 0px 5px 2px white ;
+    background-color: bisque;
+}
+.select_and_input input:hover{
     box-shadow: 0px 0px 5px 2px white ;
     background-color: bisque;
 }
@@ -112,15 +125,31 @@ body{
 .editClass:hover{
     box-shadow: 0px 0px 5px 2px rgb(14, 6, 6) ; 
     transform:scale(1.2);
-
-
 }
+
 .editClass a{
 text-decoration: none;
 color: white;
 border: 1px solid  white;
 padding: 4px;
 background-color: brown;
+}
+input[type="textarea"]::placeholder { 
+                  
+    /* Firefox, Chrome, Opera */
+    text-align: center;
+}
+.edit-button{
+    margin-top: 10px;
+    height: 30px;
+    width: 90px;
+    background-color: silver;
+    
+}
+
+input.delechack{
+    width: 17px;
+    height: 17px;
 }
 
 .work{
