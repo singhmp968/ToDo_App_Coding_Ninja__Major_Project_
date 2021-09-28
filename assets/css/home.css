@@ -1,8 +1,12 @@
+/* css design  */
+/* style for body */
 body{
     margin: 0;
     font-family: sans-serif;
     background-color: rgb(85, 2, 85);
 }
+/* style for single task div container */
+
 .singleTask{
     border: 1px solid white;
     width: 50%;
@@ -14,14 +18,19 @@ body{
     position: relative;
     left: 25%;
 }
+/* style for del check */
 .delechack{
     margin: 15px;
+
 }
+/* style for category section */
+
 .catesec{
     border: 1px solid black;
     background-color: chartreuse;
-    
 }
+
+/* style for TODO heading */
 
 .todoheading{
     color: white;
@@ -30,12 +39,16 @@ body{
     margin-bottom: 50px;
 }
 
+/* style for form */
+
 .form_class{
     width: 50%;
     text-align: center;
     position: relative;
     left: 25%;
 }
+/* style for description area */
+
 .desc_Class input{
     height: 50px;
     width: 100%;
@@ -45,22 +58,27 @@ body{
     border-radius: 22px;
     outline: none;
 }
+/* implemented some hover in description section */
 .desc_Class input:hover{
     /* transform: scale(1.1); */
     box-shadow: 0px 0px 5px 2px white ;
     background-color: bisque;
 }
+
+/* design for select and option START */
+/* style for select and options input input area */
+
 .select_and_input{
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
 }
+
 .select_and_input select{
     height: 45px;
     width: 40%;
     transition: transform 0.3s;
     text-align: center;
-    
     margin-right: 50px;
 }
 .select_and_input input{
@@ -68,7 +86,6 @@ body{
     width: 40%;
     text-align: center;
     transition: transform 0.3s;
-   
 }
 .select_and_input select:hover{
     box-shadow: 0px 0px 5px 2px white ;
@@ -78,6 +95,9 @@ body{
     box-shadow: 0px 0px 5px 2px white ;
     background-color: bisque;
 }
+/* design for select and option END */
+
+/* design for dates value */
 .datesValues{
     transition: transform 0.3s;
 }
@@ -85,6 +105,7 @@ body{
     box-shadow: 0px 0px 5px 2px white ;
     background-color: bisque;
 }
+/* design for button */
 .buttonDesign{
     height: 50px;
     width: 120px;
@@ -116,6 +137,7 @@ body{
     box-shadow: 0px 0px 5px 2px rgb(14, 6, 6) ; 
     transform:scale(1.2);
 }
+/* design for edit sction */
 .editClass{
         transition: transform 0.3s;
         position: absolute;
@@ -134,17 +156,19 @@ border: 1px solid  white;
 padding: 4px;
 background-color: brown;
 }
+/* for placing placeholder in the center  */
 input[type="textarea"]::placeholder { 
                   
     /* Firefox, Chrome, Opera */
     text-align: center;
 }
+/* design for EDIT button*/
 .edit-button{
     margin-top: 10px;
     height: 30px;
     width: 90px;
-    background-color: silver;
-    
+    background-color: brown;
+    color: white;
 }
 
 input.delechack{
@@ -152,8 +176,9 @@ input.delechack{
     height: 17px;
 }
 
+/* Design for different category */
 .work{
-    background-color: purple;
+    background-color:lightcoral;
         
 }
 .Personal{
@@ -172,4 +197,7 @@ input.delechack{
 }
 .dueDate{
     width: fit-content;
+}
+.color-white{
+    color: white;
 }

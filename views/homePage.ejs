@@ -1,16 +1,5 @@
-<!-- <html>
-    <head>
-        <title>
-            <%= title%>
-        </title>
-        <link rel="stylesheet" href="/css/home.css">
-  
-    </head>
-
-    <body>
-        <h1>TODO APPLICATION</h1> -->
-        <link rel="stylesheet" href="/css/home.css">
-  
+<!-- HTMl section for main home page -->
+<link rel="stylesheet" href="/css/home.css">  
         <div class="form_class">
             <form action="/create_todo" method="POST">
             <div class="desc_Class">
@@ -33,7 +22,7 @@
                  
         </div>
 
-
+<!-- for displaying TODO lists -->
         <div>
             <% for(let i of todoList) { let j=0; let newIds='descids'+j; %>
                 <div class="singleTask">
@@ -57,5 +46,4 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="/js/script.js"></script>
     
-    <!-- </body>
-</html> -->
+   

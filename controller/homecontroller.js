@@ -1,40 +1,7 @@
 //
 //const db = require('./config/mongoose')
 const TodoLists = require('../models/todo_list')
-const swal = require('sweetalert')
-dummytodo = [
-    {
-    uId:'1',
-    desc:'getveggi',
-    category:'personal',
-    dueDate:'12/12/2021'
-    },
-    {
-    uId:'2',
-    desc:'getveggi',
-    category:'personal',
-    dueDate:'12/12/2021'
-    }
-    
-
-
-]
-// var contactList = [
-//     {
-//         name:'Rahul',
-//         phone:'74125963'
-//     },
-//     {
-//         name:'tonk start',
-//         phone:'45632178'
-//     },
-//     {
-//         name:'coding Ninjas',
-//         phone:'74125896'
-//     }
-// ]
-
-
+// function for redirecting to main home page
 module.exports.home = function(req,res){
     // fetching using mongoose
     TodoLists.find({},function(err,todo){
@@ -49,29 +16,15 @@ module.exports.home = function(req,res){
            
         })
     })
-    
-    
-    //return res.end('<h1>@home page</h1>')
-    // return res.render('homePage',{
-    //     title:"Home",
-    //     todoList:dummytodo
-    //     //todoList:contactList
-    // })
-
 }
+// function for new Data
+function DateValeu(dueDate){
+    let months = ['jan','feb','mar','Apr','May','june','july','aug','sept','oct','nov','dec'] // static value for implementing monthe value
 
-// module.exports.getTodoValues = function(req,res){
-//     console
-// }
 
-module.exports.createTodo = function(req,res){
-let months = ['jan','feb','mar','Apr','May','june','july','aug','sept','oct','nov','dec']
-    console.log('sdasas',req.body)   
-   // dummytodo.push(req.body)
-    dueDate =req.body.dateValue.split('-');
-    console.log('--->',dueDate)   
     newdate = '';
     let monapp = '';
+    // checking months 
     if(dueDate[1] == '01'){
         monapp=months[0];
     }
@@ -100,9 +53,16 @@ let months = ['jan','feb','mar','Apr','May','june','july','aug','sept','oct','no
     }else if(dueDate[1] == '12'){
         monapp=months[11];
     }
-    newdate =dueDate[2]+'-'+monapp+'-'+dueDate[0]
-   
-    TodoLists.create({
+    newdate =dueDate[2]+'-'+monapp+'-'+dueDate[0] // displaying date in dd-mm-yyyy formate
+    return newdate;
+}
+
+// function for creating toto list
+module.exports.createTodo = function(req,res){
+    dueDate =req.body.dateValue.split('-'); // splitting date and taking montha value
+   let newdate='';
+    newdate= DateValeu(dueDate);     
+    TodoLists.create({ // crating new todo and storing into DB
         desc:req.body.desc,
         category:req.body.category,
         dueDate: newdate
@@ -111,21 +71,14 @@ let months = ['jan','feb','mar','Apr','May','june','july','aug','sept','oct','no
             console.log('Oops error occoured');
             return;
         }
-        swal("Hello world!");
-
-        console.log('data is being added',newArr)
         return res.redirect('/')
     })
-   
-   
-    }
-module.exports.deleteTodo = function(req,res){
-    console.log(req.query.id)
-    sp = req.query.id;
-    newsp = sp.split(',');
-    console.log('==>',newsp)
-    
-    for(let i=0;i<newsp.length;i++){
+}
+// function for deleting todo list
+module.exports.deleteTodo = function(req,res){ 
+    sp = req.query.id; // getting the id from ui
+    newsp = sp.split(','); 
+    for(let i=0;i<newsp.length;i++){ // looping over newsp  to delete all the checked value
         TodoLists.findByIdAndDelete(newsp[i],function(err){
             if(err){
                 console.log('err')
@@ -133,83 +86,30 @@ module.exports.deleteTodo = function(req,res){
             }
         })
     }
-return res.redirect('/')
-    // TodoLists.findByIdAndDelete({
-    //     _id:{
-    //         id:req.query.id
-    //     }
-    // },function(err,deleteTodo){
-    //     if(err){
-    //         console.log(err);
-    //         return;
-    //     }
-    //     console.log('data is beign deleted')
-    //     return res.redirect('/')
-
-    // })
-    // //TodoLists.findByIdAndDelete()
-
-//     sp = req.query.id;
-//     newsp = sp.split(',');
-//     console.log('sp=>',newsp)
-//     for(let j=0;j<sp.length;j++){
-//     for(let i=0;i<dummytodo.length;i++){
-//         if(sp[j]==dummytodo[i].uId){
-//             //console.log('@@',j)
-//             dummytodo.splice(i,1)
-//         }
-//     }
-// }
-
-//     let j=0;
-//     let idarr = []
-//     for(let l=0;l<req.query.id.length;l++){
-//         console.log(req.query.id)
-//         if(req.query.id.charAt(l)!= ','){
-//             idarr[l] = req.query.id;
-//         }
-
-//     }
-// console.log('arr',idarr)
-
-
-    // for(let i=0;i<dummytodo.length;i++){
-    //     if(dummytodo[i].uId == req.query.id ){
-    //          console.log(dummytodo[i])
-    //             dummytodo.splice(i,1)
-
-    //         }
-        
-    
-    // let todoIndex =dummytodo.findIndex(todo => todo.uId === i) // findIndex is a Js function and findIndex iterate over each item and find the requeide value if it is matching then it will return Index value else it will return -1
-    //     console.log(contactIndex)
-    //     if(contactIndex!=-1){
-    // contactList.splice(contactIndex,1)
-    // }
-    
+return res.redirect('/');
 }
-
-module.exports.EditPage = function(req,res){
+// function for fetching data for edit page
+module.exports.EditPage = function(req,res){ // here we are fetching the data whic need to be edited
     console.log('aaa',req.query)
     TodoLists.findById(req.query.id,function(err,todoLists){
         if(err){ console.log('hi man!! it an error'); return}
     
-        console.log('toli',todoLists)
+        console.log('toli',todoLists.dueDate)
         return res.render('editPage',{
         title:'Edit Page',
         todolist:todoLists
         })
     })
-    
-    // return res.render('editPage',{
-    //     title:'Edit Page'
-    // })
 }
-
+// function for updatind tada after the todo is being edited
 module.exports.editDetails = function(req,res){
-    console.log('==>>',req.query.id)
-    console.log('asd',req.body)
-    TodoLists.updateOne({_id:req.query.id},{$set:{desc:req.body.desc,category:req.body.category,dueDate:req.body.dueDate}} ,function(err,todoData){
+    // console.log('==>>',req.query.id)
+     console.log('asd==>',req.body.dueDate);
+    dueDate =req.body.dueDate.split('-'); // splitting date and taking montha value
+    let newdate='';
+    newdate= DateValeu(dueDate);     
+    console.log('NDVal==>',newdate)
+     TodoLists.updateOne({_id:req.query.id},{$set:{desc:req.body.desc,category:req.body.category,dueDate:newdate}} ,function(err,todoData){
         if(err){console.log('erroe while updating'); return}
         return res.redirect('/')
     })
