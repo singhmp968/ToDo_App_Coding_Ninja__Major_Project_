@@ -93,8 +93,6 @@ module.exports.EditPage = function(req,res){ // here we are fetching the data wh
     console.log('aaa',req.query)
     TodoLists.findById(req.query.id,function(err,todoLists){
         if(err){ console.log('hi man!! it an error'); return}
-    
-        console.log('toli',todoLists.dueDate)
         return res.render('editPage',{
         title:'Edit Page',
         todolist:todoLists
