@@ -1,6 +1,6 @@
 # ToDo_App
 
-It is  Coding Ninjas Major project assignment. Please do visit the Coding Ninjas website [CodingNinjas CareerCamp](https://www.codingninjas.com/) for more details.
+It is  Coding Ninjas Major project assignment. Please do visit the Coding Ninjas website [CodingNinjas ](https://www.codingninjas.com/) for more details.
 
 ## Table of contents
 
