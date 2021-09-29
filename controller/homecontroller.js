@@ -101,12 +101,9 @@ module.exports.EditPage = function(req,res){ // here we are fetching the data wh
 }
 // function for updatind tada after the todo is being edited
 module.exports.editDetails = function(req,res){
-    // console.log('==>>',req.query.id)
-     console.log('asd==>',req.body.dueDate);
     dueDate =req.body.dueDate.split('-'); // splitting date and taking montha value
     let newdate='';
     newdate= DateValeu(dueDate);     
-    console.log('NDVal==>',newdate)
      TodoLists.updateOne({_id:req.query.id},{$set:{desc:req.body.desc,category:req.body.category,dueDate:newdate}} ,function(err,todoData){
         if(err){console.log('erroe while updating'); return}
         return res.redirect('/')
