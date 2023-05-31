@@ -1,13 +1,14 @@
 /* css design  */
 /* style for body */
-body{
-    margin: 0;
+body {
+    margin: 0px;
     font-family: sans-serif;
     background-color: rgb(85, 2, 85);
 }
+
 /* style for single task div container */
 
-.singleTask{
+.singleTask {
     border: 1px solid white;
     width: 50%;
     height: 90px;
@@ -18,21 +19,23 @@ body{
     position: relative;
     left: 25%;
 }
+
 /* style for del check */
-.delechack{
+.delechack {
     margin: 15px;
 
 }
+
 /* style for category section */
 
-.catesec{
+.catesec {
     border: 1px solid black;
     background-color: chartreuse;
 }
 
 /* style for TODO heading */
 
-.todoheading{
+.todoheading {
     color: white;
     text-align: center;
     margin-top: 20px;
@@ -41,15 +44,16 @@ body{
 
 /* style for form */
 
-.form_class{
+.form_class {
     width: 50%;
     text-align: center;
     position: relative;
     left: 25%;
 }
+
 /* style for description area */
 
-.desc_Class input{
+.desc_Class input {
     height: 50px;
     width: 100%;
     margin: 15px;
@@ -58,112 +62,127 @@ body{
     border-radius: 22px;
     outline: none;
 }
+
 /* implemented some hover in description section */
-.desc_Class input:hover{
+.desc_Class input:hover {
     /* transform: scale(1.1); */
-    box-shadow: 0px 0px 5px 2px white ;
+    box-shadow: 0px 0px 5px 2px white;
     background-color: bisque;
 }
 
 /* design for select and option START */
 /* style for select and options input input area */
 
-.select_and_input{
+.select_and_input {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
 }
 
-.select_and_input select{
+.select_and_input select {
     height: 45px;
     width: 40%;
     transition: transform 0.3s;
     text-align: center;
     margin-right: 50px;
 }
-.select_and_input input{
+
+.select_and_input input {
     height: 45px;
     width: 40%;
     text-align: center;
     transition: transform 0.3s;
 }
-.select_and_input select:hover{
-    box-shadow: 0px 0px 5px 2px white ;
+
+.select_and_input select:hover {
+    box-shadow: 0px 0px 5px 2px white;
     background-color: bisque;
 }
-.select_and_input input:hover{
-    box-shadow: 0px 0px 5px 2px white ;
+
+.select_and_input input:hover {
+    box-shadow: 0px 0px 5px 2px white;
     background-color: bisque;
 }
+
 /* design for select and option END */
 
 /* design for dates value */
-.datesValues{
+.datesValues {
     transition: transform 0.3s;
 }
-.datesValues:hover{
-    box-shadow: 0px 0px 5px 2px white ;
+
+.datesValues:hover {
+    box-shadow: 0px 0px 5px 2px white;
     background-color: bisque;
 }
+
 /* design for button */
-.buttonDesign{
+.buttonDesign {
     height: 50px;
     width: 120px;
     color: white;
     transition: transform 0.3s;
 }
-.buttonDesign:hover{
-    box-shadow: 0px 0px 5px 2px white ; 
-    transform:scale(1.1);
-}
-.colorRed{
-    background-color: red;
-    
+
+.buttonDesign:hover {
+    box-shadow: 0px 0px 5px 2px white;
+    transform: scale(1.1);
 }
 
-.colorGrey{
+.colorRed {
+    background-color: red;
+
+}
+
+.colorGrey {
     background-color: gray;
 }
-.commonClass{
+
+.commonClass {
     height: auto;
     width: auto;
     text-align: center;
     padding: 5px;
-    border-radius: 15px;    
+    border-radius: 15px;
     color: white;
     transition: transform 0.3s;
 }
-.commonClass:hover{
-    box-shadow: 0px 0px 5px 2px rgb(14, 6, 6) ; 
-    transform:scale(1.2);
-}
-/* design for edit sction */
-.editClass{
-        transition: transform 0.3s;
-        position: absolute;
-        left: 80%;
-        margin: 20px;
-}
-.editClass:hover{
-    box-shadow: 0px 0px 5px 2px rgb(14, 6, 6) ; 
-    transform:scale(1.2);
+
+.commonClass:hover {
+    box-shadow: 0px 0px 5px 2px rgb(14, 6, 6);
+    transform: scale(1.2);
 }
 
-.editClass a{
-text-decoration: none;
-color: white;
-border: 1px solid  white;
-padding: 4px;
-background-color: brown;
+/* design for edit sction */
+.editClass {
+    transition: transform 0.3s;
+    position: absolute;
+    left: 80%;
+    margin: 20px;
 }
+
+.editClass:hover {
+    box-shadow: 0px 0px 5px 2px rgb(14, 6, 6);
+    transform: scale(1.2);
+}
+
+.editClass a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 4px;
+    background-color: brown;
+}
+
 /* for placing placeholder in the center  */
-input[type="textarea"]::placeholder { 
-                  
+input[type="textarea"]::placeholder {
+
     /* Firefox, Chrome, Opera */
     text-align: center;
 }
+
 /* design for EDIT button*/
-.edit-button{
+.edit-button {
     margin-top: 10px;
     height: 30px;
     width: 90px;
@@ -171,33 +190,39 @@ input[type="textarea"]::placeholder {
     color: white;
 }
 
-input.delechack{
+input.delechack {
     width: 17px;
     height: 17px;
 }
 
 /* Design for different category */
-.work{
-    background-color:lightcoral;
-        
+.work {
+    background-color: lightcoral;
+
 }
-.Personal{
+
+.Personal {
     background-color: skyblue;
 
 }
-.Claeaning{
+
+.Claeaning {
     background-color: green;
 }
-.Otheres{
+
+.Otheres {
     background-color: teal;
 }
-.name_and_dueDate{
+
+.name_and_dueDate {
     height: auto;
     width: 200px;
 }
-.dueDate{
+
+.dueDate {
     width: fit-content;
 }
-.color-white{
+
+.color-white {
     color: white;
 }
